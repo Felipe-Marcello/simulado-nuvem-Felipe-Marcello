@@ -1,1 +1,5 @@
+kubectl -n simulado-nuvem create configmap pagina \
+  --from-literal=index.html="<h1>Simulado Cloud - Versao 1</h1>" \
+  --dry-run=client -o yaml > manifests/01-configmap-v1.yaml
 
+kubectl apply -f manifests/01-configmap-v1.yaml
